@@ -3,7 +3,7 @@ import { InputText } from "../components/ui/InputText";
 import { InputPassword } from "../components/ui/InputPassword"; 
 import { zodResolver } from "@hookform/resolvers/zod";
 import {z} from "zod";
-import Button from "../components/button";
+import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 

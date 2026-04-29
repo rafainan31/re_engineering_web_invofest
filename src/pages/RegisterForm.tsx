@@ -6,7 +6,7 @@ import { z } from "zod";
 import { Textarea } from "../components/Textarea";
 import { Select } from "../components/Select";
 // import button from "../component/button";
-import Button from "../components/button";
+import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 
