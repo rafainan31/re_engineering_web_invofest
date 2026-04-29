@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Button from "../components/button";
+import Button from "../components/Button";
 import  Collapse from "../components/Collapse";
 import SpeakerCard from "../components/SpeakerCard";
 import CardProduct from "../components/CardProduct";
