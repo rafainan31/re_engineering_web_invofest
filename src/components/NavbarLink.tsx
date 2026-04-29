@@ -10,7 +10,6 @@ export const NavbarLink: React.FC<NavLinkProps> = ({
     label,
     href,
     icon,
-    isActive = false,
 }) => {
     const activeStyle = "text-red-900";
     const defaultStyle = "text-slate-600 hover:text-red-900";

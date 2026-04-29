@@ -2,7 +2,6 @@ import { Home, Trophy, Clipboard, Laptop, Mic, UserCircle } from "lucide-react";
 import { NavLink } from "react-router-dom"
 
 export const Header = () => {
-    const currentPath = "/";
     const menuItems = [
         { label: "Beranda", href: "/", icon: <Home size={18} /> },
         { label: "Competition", href: "/competition", icon: <Trophy size={18} /> },

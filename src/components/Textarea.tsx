@@ -20,7 +20,7 @@ export const Textarea: React.FC<TextareaProps> = ({
       <textarea
         {...register(name)}
         placeholder={placeholder}
-        className="border rounded px-3 py-2 min-h-[100px]"
+        className="border rounded px-3 py-2 min-h-25"
       />
 
       {error && (
