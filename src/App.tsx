@@ -1,13 +1,34 @@
-import LoginFrom from "./pages/LoginForm";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Competition from "./pages/Competition";
+import Homepage from "./pages/Homepage";
+import Login from "./pages/Login";
+import LoginForm from "./pages/LoginForm";
 import RegisterForm from "./pages/RegisterForm";
+import Seminar from "./pages/Seminar";
+import Talkshow from "./pages/Talkshow";
+import Workshop from "./pages/Workshop";
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
 
 function App() {
   return (
-    <div className="grid grid-cols-2 w-full container mx-auto gap-4 mt-2">
-    <LoginFrom/>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/competition" element={<Competition />} />
+        <Route path="/seminar" element={<Seminar />} />
+        <Route path="/workshop" element={<Workshop />} />
+        <Route path="/talkshow" element={<Talkshow />} />
+        {/* <Route path="/login" element={<Login />} /> */}
+        </Route>
 
-    <RegisterForm/>
-    </div>
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

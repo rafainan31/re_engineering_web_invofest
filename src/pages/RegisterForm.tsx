@@ -7,6 +7,7 @@ import { Textarea } from "../components/Textarea";
 import { Select } from "../components/Select";
 // import button from "../component/button";
 import Button from "../components/button";
+import { Link } from "react-router-dom";
 
 
 type FormData = {
@@ -82,6 +83,10 @@ export default function RegisterForm() {
 
                 <div>
                     <Button label="Register"variant="primary"  />
+                </div>
+
+                <div>
+                    Sudah punya akun <Link to="/login">Login Disini</Link>
                 </div>
             </form>
         </div>
