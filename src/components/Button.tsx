@@ -2,9 +2,10 @@ interface ButtonProps {
     label: string;
     variant?: string;
     className?: string;
+    type?: "button" | "submit" | "reset";
 }
 
-const Button: React.FC<ButtonProps> = ({ label, variant }) => {
+const Button: React.FC<ButtonProps> = ({ label, variant, className = "", type = "button" }) => {
     const baseStyle =
         "p-4 rounded-2xl font-semibold transition-all duration-300 ease-in-out active:scale-95";
 
@@ -14,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({ label, variant }) => {
     };
 
     return (
-        <button className={`${baseStyle} ${variants[variant as keyof typeof variants]}`}>
+        <button type={type} className={`${baseStyle} ${variants[variant as keyof typeof variants]} ${className}`}>
             {label}
         </button>
     );

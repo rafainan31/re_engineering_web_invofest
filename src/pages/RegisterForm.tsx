@@ -39,14 +39,14 @@ export default function RegisterForm() {
             <form onSubmit={handleSubmit(onsubmit)}>
                 <InputText
                     label="Nama"
-                    nama="nama"
+                    name="nama"
                     register={register}
                     error={errors.nama?.message}
                 />
 
                 <InputText
                     label="Email"
-                    nama="email"
+                    name="email"
                     register={register}
                     error={errors.email?.message}
                 />
@@ -82,7 +82,7 @@ export default function RegisterForm() {
                 />
 
                 <div>
-                    <Button label="Register"variant="primary"  />
+                    <Button label="Register" variant="primary" type="submit" />
                 </div>
 
                 <div>

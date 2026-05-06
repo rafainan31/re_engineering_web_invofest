@@ -4,7 +4,10 @@ import { InputPassword } from "../components/ui/InputPassword";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {z} from "zod";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { useAuthStore } from "../store/useAuthStore";
+
 
 
 type FormData ={
@@ -18,20 +21,33 @@ const schema = z.object({
 })
 
 export default function LoginForm() {
+    const navigate = useNavigate();
+    const login = useAuthStore((state)=> state.login);
+    
     const {register, handleSubmit, formState: {errors}} = useForm<FormData>({
         resolver: zodResolver(schema),
     });
 
-    const onsubmit = (data: FormData) => {
-        console.log(data);
+    const onSubmit = (data: FormData) => {
+    console.log(data);
+    if (data.email == "admin@gmail.com" && data.password == "admin123") {
+      alert("Login Berhasil");
+
+      login(data.email);
+
+      // Redirect ke halaman dashboard
+      navigate("/dashboard");
+    } else {
+      alert("Email atau password anda salah!");
     }
+  };
 
     return (
         <div>
-            <form onSubmit={handleSubmit(onsubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                <InputText
                label="Email" 
-               nama="email"
+               name="email"
                register={register}
                error={errors.email?.message}
                />
@@ -44,7 +60,7 @@ export default function LoginForm() {
                 />
 
                 <div>
-                    <Button label="Login" variant="primary"/>
+                    <Button label="Login" variant="primary" type="submit" />
                 </div>
 
                 <div>
